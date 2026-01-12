@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Claude 项目目录</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 40px 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            color: white;
+            text-align: center;
+            font-size: 48px;
+            margin-bottom: 50px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .category {
+            background: white;
+            border-radius: 20px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+        }
+
+        .category h2 {
+            color: #667eea;
+            font-size: 28px;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #667eea;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            border-radius: 15px;
+            padding: 20px;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: block;
+            border: 2px solid transparent;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+            border-color: #667eea;
+        }
+
+        .card h3 {
+            color: #333;
+            font-size: 18px;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .card p {
+            color: #666;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+
+        .icon {
+            font-size: 24px;
+        }
+
+        .footer {
+            text-align: center;
+            color: white;
+            margin-top: 40px;
+            padding: 20px;
+            font-size: 14px;
+            opacity: 0.8;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 32px;
+            }
+
+            .grid {
+                grid-template-columns: 1fr;
+            }
+
+            .category {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Claude 项目目录</h1>
+
+        <!-- 游戏类 -->
+        <div class="category">
+            <h2>游戏</h2>
+            <div class="grid">
+                <a href="snake-game.html" class="card">
+                    <h3><span class="icon">🐍</span> 贪吃蛇游戏</h3>
+                    <p>经典的贪吃蛇游戏，使用方向键控制</p>
+                </a>
+                <a href="tetris.html" class="card">
+                    <h3><span class="icon">🎮</span> 俄罗斯方块</h3>
+                    <p>经典的俄罗斯方块游戏</p>
+                </a>
+                <a href="3d-tetris.html" class="card">
+                    <h3><span class="icon">🎲</span> 3D 俄罗斯方块</h3>
+                    <p>3D 效果的俄罗斯方块游戏</p>
+                </a>
+                <a href="space-shooter.html" class="card">
+                    <h3><span class="icon">🚀</span> 太空射击游戏</h3>
+                    <p>太空射击类游戏</p>
+                </a>
+                <a href="tank-battle.html" class="card">
+                    <h3><span class="icon">🎯</span> 坦克大战</h3>
+                    <p>经典坦克对战游戏</p>
+                </a>
+                <a href="programmer-cult-watermelon.html" class="card">
+                    <h3><span class="icon">🍉</span> 程序员种西瓜</h3>
+                    <p>程序员的合成西瓜游戏</p>
+                </a>
+                <a href="whack-a-mole.html" class="card">
+                    <h3><span class="icon">🔨</span> 打地鼠游戏</h3>
+                    <p>经典打地鼠游戏,三种难度可选</p>
+                </a>
+                <a href="super-mario.html" class="card">
+                    <h3><span class="icon">🍄</span> 超级马里奥</h3>
+                    <p>经典平台跳跃游戏,5个关卡挑战</p>
+                </a>
+                <a href="rambo.html" class="card">
+                    <h3><span class="icon">🎖️</span> 兰博突击队</h3>
+                    <p>动作射击游戏,10波敌人挑战</p>
+                </a>
+                <a href="gomoku.html" class="card">
+                    <h3><span class="icon">⚫</span> 五子棋</h3>
+                    <p>经典五子棋游戏,黑白轮流下子,五子连珠获胜</p>
+                </a>
+                <a href="chinese-army-chess.html" class="card">
+                    <h3><span class="icon">⚔️</span> 中国军棋</h3>
+                    <p>中国军棋双人对战,红绿双方战略博弈</p>
+                </a>
+                <a href="zuma-game.html" class="card">
+                    <h3><span class="icon">🎯</span> 祖玛游戏</h3>
+                    <p>经典祖玛,射击彩球消除三个或更多相同颜色</p>
+                </a>
+                <a href="lianliankan-game.html" class="card">
+                    <h3><span class="icon">🔗</span> 连连看</h3>
+                    <p>经典连连看,连接相同图标,连线不超过两个转角</p>
+                </a>
+                <a href="typing-game.html" class="card">
+                    <h3><span class="icon">⌨️</span> 打字练习</h3>
+                    <p>打字速度练习,提高键盘输入效率,三种难度可选</p>
+                </a>
+                <a href="fruit-ninja.html" class="card">
+                    <h3><span class="icon">🍉</span> 水果忍者</h3>
+                    <p>经典切水果游戏,鼠标拖动切开水果,避开炸弹!</p>
+                </a>
+                <a href="angry-birds.html" class="card">
+                    <h3><span class="icon">🐦</span> 愤怒的小鸟</h3>
+                    <p>经典物理弹射游戏,拖动小鸟击中所有猪,3个关卡挑战!</p>
+                </a>
+                <a href="3d-racing-game.html" class="card">
+                    <h3><span class="icon">🏎️</span> 3D赛车游戏</h3>
+                    <p>真实3D赛车体验,智能AI对手,粒子特效,本地保存最佳成绩!</p>
+                </a>
+            </div>
+        </div>
+
+        <!-- 工具应用 -->
+        <div class="category">
+            <h2>工具 & 应用</h2>
+            <div class="grid">
+                <a href="vocabulary-flashcards.html" class="card">
+                    <h3><span class="icon">📚</span> 词汇卡片</h3>
+                    <p>英语单词学习工具，包含 6000-10000 频率词</p>
+                </a>
+                <a href="notes-app.html" class="card">
+                    <h3><span class="icon">📝</span> 记事本应用</h3>
+                    <p>简单的在线记事本工具</p>
+                </a>
+                <a href="drawing-app.html" class="card">
+                    <h3><span class="icon">🎨</span> 绘图应用</h3>
+                    <p>在线绘图工具</p>
+                </a>
+                <a href="video-player.html" class="card">
+                    <h3><span class="icon">🎬</span> 视频播放器</h3>
+                    <p>HTML5 视频播放器</p>
+                </a>
+            </div>
+        </div>
+
+        <!-- 特效展示 -->
+        <div class="category">
+            <h2>特效展示</h2>
+            <div class="grid">
+                <a href="particle-system.html" class="card">
+                    <h3><span class="icon">✨</span> 粒子系统</h3>
+                    <p>交互式粒子效果展示</p>
+                </a>
+                <a href="water-particles.html" class="card">
+                    <h3><span class="icon">💧</span> 水粒子效果</h3>
+                    <p>水粒子动画效果</p>
+                </a>
+            </div>
+        </div>
+
+        <!-- 天气预报 -->
+        <div class="category">
+            <h2>天气预报</h2>
+            <div class="grid">
+                <a href="weather_forecast.html" class="card">
+                    <h3><span class="icon">🌤️</span> 天气预报</h3>
+                    <p>标准天气预报界面</p>
+                </a>
+                <a href="weather_forecast_tv.html" class="card">
+                    <h3><span class="icon">📺</span> 电视风格天气</h3>
+                    <p>电视风格的天气预报</p>
+                </a>
+                <a href="weather_forecast_cctv.html" class="card">
+                    <h3><span class="icon">🎥</span> CCTV 风格天气</h3>
+                    <p>CCTV 风格天气预报</p>
+                </a>
+                <a href="weather_forecast_cctv_full.html" class="card">
+                    <h3><span class="icon">📡</span> CCTV 完整版</h3>
+                    <p>CCTV 完整版天气预报</p>
+                </a>
+                <a href="weather_forecast_simple_fast.html" class="card">
+                    <h3><span class="icon">⚡</span> 简易快速版</h3>
+                    <p>简化快速版天气预报</p>
+                </a>
+                <a href="weather_forecast_chroma.html" class="card">
+                    <h3><span class="icon">🎬</span> 色键抠像版</h3>
+                    <p>支持色键抠像的天气预报</p>
+                </a>
+            </div>
+        </div>
+
+        <!-- AI 搜索 -->
+        <div class="category">
+            <h2>AI 搜索</h2>
+            <div class="grid">
+                <a href="ai-search-engine.html" class="card">
+                    <h3><span class="icon">🔍</span> AI 搜索引擎</h3>
+                    <p>AI 驱动的搜索引擎</p>
+                </a>
+                <a href="ai-search-engine-anthropic.html" class="card">
+                    <h3><span class="icon">🤖</span> Anthropic AI 搜索</h3>
+                    <p>基于 Anthropic API 的 AI 搜索</p>
+                </a>
+            </div>
+        </div>
+
+        <!-- 投影系统 -->
+        <div class="category">
+            <h2>投影系统</h2>
+            <div class="grid">
+                <a href="projection-warper.html" class="card">
+                    <h3><span class="icon">📐</span> 投影变换器</h3>
+                    <p>4点控制点投影变形工具</p>
+                </a>
+                <a href="projection-warper-v2.html" class="card">
+                    <h3><span class="icon">📐</span> 投影变换器 V2</h3>
+                    <p>增强版投影变换工具</p>
+                </a>
+                <a href="projection-warper-new.html" class="card">
+                    <h3><span class="icon">🔄</span> 投影变换器新版</h3>
+                    <p>新版本投影变形工具</p>
+                </a>
+                <a href="hemisphere_prewarp_3d.html" class="card">
+                    <h3><span class="icon">🌐</span> 半球预变形3D</h3>
+                    <p>半球面投影预变形处理</p>
+                </a>
+                <a href="projector-fusion-simulator.html" class="card">
+                    <h3><span class="icon">🎭</span> 投影融合模拟器</h3>
+                    <p>多投影融合边缘模拟器</p>
+                </a>
+                <a href="ProjectNew.html" class="card">
+                    <h3><span class="icon">🆕</span> 新项目</h3>
+                    <p>新项目实验版</p>
+                </a>
+                <a href="projectnew2.html" class="card">
+                    <h3><span class="icon">🆕</span> 新项目 V2</h3>
+                    <p>新项目第二版</p>
+                </a>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>Claude Code 项目目录 | HTTP 服务器运行在 http://localhost:8000</p>
+        </div>
+    </div>
+</body>
+</html>
