@@ -11,6 +11,7 @@
 !BUILD_WINDOWS.md
 !.github/
 !.gitignore
+!ai-generated-images/
 
 # Build directories
 build/
