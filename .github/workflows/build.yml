@@ -1,0 +1,117 @@
+name: Build Pomodoro Timer
+
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+    branches: [ main, master ]
+  workflow_dispatch:
+
+jobs:
+  build:
+    strategy:
+      matrix:
+        os: [windows-latest, macos-latest, ubuntu-latest]
+        include:
+          - os: windows-latest
+            os_name: windows
+            executable_name: PomodoroTimer.exe
+            artifact_name: PomodoroTimer-Windows
+          - os: macos-latest
+            os_name: macos
+            executable_name: PomodoroTimer
+            artifact_name: PomodoroTimer-macOS
+          - os: ubuntu-latest
+            os_name: linux
+            executable_name: PomodoroTimer
+            artifact_name: PomodoroTimer-Linux
+
+    runs-on: ${{ matrix.os }}
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Install Qt (Windows)
+      if: matrix.os == 'windows-latest'
+      uses: jurplel/install-qt-action@v4
+      with:
+        version: '5.15.2'
+        host: 'windows'
+        target: 'desktop'
+        arch: 'win64_msvc2019_64'
+        modules: 'qtwidgets'
+
+    - name: Install Qt (macOS)
+      if: matrix.os == 'macos-latest'
+      uses: jurplel/install-qt-action@v4
+      with:
+        version: '5.15.2'
+        host: 'mac'
+        target: 'desktop'
+        clt: '11.0'
+        modules: 'qtwidgets'
+
+    - name: Install Qt (Linux)
+      if: matrix.os == 'ubuntu-latest'
+      uses: jurplel/install-qt-action@v4
+      with:
+        version: '5.15.2'
+        host: 'linux'
+        target: 'desktop'
+        modules: 'qtwidgets'
+
+    - name: Configure CMake (Windows)
+      if: matrix.os == 'windows-latest'
+      run: |
+        cmake -B build -DCMAKE_PREFIX_PATH="${env:Qt5_DIR}"
+
+    - name: Configure CMake (Unix)
+      if: matrix.os != 'windows-latest'
+      run: |
+        cmake -B build -DCMAKE_PREFIX_PATH="$Qt5_DIR"
+
+    - name: Build
+      run: |
+        cmake --build build --config Release
+
+    - name: Prepare artifacts (Windows)
+      if: matrix.os == 'windows-latest'
+      run: |
+        mkdir artifact
+        copy build\Release\PomodoroTimer.exe artifact\
+        copy "${env:Qt5_DIR}\bin\Qt5Widgets.dll" artifact\
+        copy "${env:Qt5_DIR}\bin\Qt5Core.dll" artifact\
+        copy "${env:Qt5_DIR}\bin\Qt5Gui.dll" artifact\
+        windeployqt artifact\PomodoroTimer.exe
+
+    - name: Prepare artifacts (macOS)
+      if: matrix.os == 'macos-latest'
+      run: |
+        mkdir artifact
+        cp build/bin/PomodoroTimer artifact/
+        macdeployqt artifact/PomodoroTimer -dmg
+
+    - name: Prepare artifacts (Linux)
+      if: matrix.os == 'ubuntu-latest'
+      run: |
+        mkdir artifact
+        cp build/bin/PomodoroTimer artifact/
+        # Linux 需要 AppImage 或手动打包
+
+    - name: Upload artifacts
+      uses: actions/upload-artifact@v4
+      with:
+        name: ${{ matrix.artifact_name }}
+        path: artifact
+        retention-days: 30
+
+    - name: Create Release (only on tags)
+      if: startsWith(github.ref, 'refs/tags/')
+      uses: softprops/action-gh-release@v1
+      with:
+        files: artifact/*
+        draft: false
+        prerelease: false
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

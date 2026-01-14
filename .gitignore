@@ -1,46 +1,53 @@
-# Ignore everything by default
-*
+# AI Generated Images Repository .gitignore
 
-# But include these files
-!pomodoro_timer.cpp
-!pomodoro_timer.h
-!main.cpp
-!CMakeLists.txt
-!PomodoroTimer.pro
-!README_POMODORO.md
-!BUILD_WINDOWS.md
-!.github/
-!.gitignore
-!ai-generated-images/
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+venv/
+env/
+ENV/
+
+# Claude Code
+.claude/
+
+# Notes and documentation (keep only image-related)
+notes/
+*.md
+!README.md
+!ai-generated-images/README.md
+
+# Config files
+config/
+.env
+
+# Temporary files
+*.tmp
+*.temp
+.DS_Store
+*.swp
+*.swo
 
 # Build directories
 build/
-bin/
-
-# Qt generated files
-*.autosave
-*.qmlc
-Makefile*
-*.moc
-moc_*.cpp
-qrc_*.cpp
-ui_*.h
-*.pro.user
-
-# CMake
-CMakeCache.txt
-CMakeFiles/
-cmake_install.cmake
-compile_commands.json
+dist/
+*.egg-info/
 
 # IDE
 .vscode/
 .idea/
+*.sublime-*
 
-# macOS
-.DS_Store
+# Vector database
+vector_db/
 
-# Compiled files
-*.class
-*.o
-*.pyc
+# Scripts (not needed in gallery)
+scripts/
+
+# Code directories (not needed in gallery)
+Code/
+
+# Misc
+.gemini-clipboard/

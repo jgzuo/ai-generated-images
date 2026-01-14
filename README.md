@@ -1,196 +1,121 @@
-# 🏎️ 3D赛车游戏
+# AI Generated Images Gallery
 
-一个功能完整的3D赛车游戏，使用 Three.js 实现，包含粒子特效、物理引擎、AI对手和保存系统。
+🎨 一个使用 AI 技术生成高质量图像的展示仓库
 
-![3D Racing Game](https://img.shields.io/badge/version-1.0.0-blue.svg)
-![Three.js](https://img.shields.io/badge/Three.js-r128-green.svg)
-![License](https://img.shields.io/badge/license-MIT-orange.svg)
+![AI Generated Images](https://img.shields.io/badge/AI-Generated-9%20Images-blue)
+![Model](https://img.shields.io/badge/Model-Tongyi--MAI-orange)
+![Tool](https://img.shields.io/badge/Tool-Claude%20Code-green)
 
-## ✨ 功能特性
+## 📖 简介
 
-### 🎮 核心游戏机制
-- **3D渲染**: 使用 Three.js r128 实现流畅的3D图形
-- **物理引擎**: 真实的车辆动力学模拟
-  - 加速、制动、转向、漂移
-  - 速度和转向的相互影响
-  - 摩擦力和惯性模拟
-- **无限赛道**: 动态生成的无限滚动赛道
-- **4条车道**: 提供多赛道选择
-- **智能AI对手**: 5个AI对手，具有障碍物检测和避障能力
-- **碰撞检测**: 车对车、车对障碍物的精确碰撞
+本仓库展示使用 AI 技术生成的高质量图像，主要通过 [ModelScope API](https://api-inference.modelscope.cn/) 和通义万象模型创建。
 
-### 🎨 视觉效果
-- **粒子系统**:
-  - 尾气效果
-  - 碰撞爆炸效果
-  - 速度线效果
-- **环境装饰**:
-  - 多种树木（松树风格）
-  - 城市建筑（带窗户）
-  - 植物和花朵
-  - 路灯
-  - 岩石
-- **动态光照**: 环境光 + 方向光 + 阴影
-- **雾效**: 距离雾增强深度感
+### ✨ 特点
 
-### 💾 数据持久化
-- **本地保存**: 使用 localStorage 保存游戏数据
-- **最佳记录**: 追踪最佳时间和最高分数
-- **总比赛数**: 统计完成的比赛数量
+- 🎨 **高质量输出**: 760x1280 像素高清图像
+- 🚀 **快速生成**: 平均 10-30 秒/张
+- 📚 **完整文档**: 每张图片都有详细的生成信息
+- 🔄 **版本控制**: 完整的 Git 历史记录
+- 📝 **来源追溯**: 记录提示词和生成参数
 
-### 🎯 游戏规则
-- **3圈比赛**: 完成完整的3圈比赛
-- **排名系统**: 实时显示当前排名
-- **分数计算**:
-  - 时间奖励
-  - 排名奖励
+## 🖼️ 图像展示
 
-## 🎮 操作说明
+### 最新作品 (2026-01-15)
 
-| 按键 | 功能 |
-|------|------|
-| `↑` / `W` | 加速 |
-| `↓` / `S` | 刹车/倒车 |
-| `←` / `A` | 左转 |
-| `→` / `D` | 右转 |
-| `Space` | 手刹（漂移） |
-| `P` | 暂停游戏 |
+批量生成系列 - 从 Notion 笔记提取提示词生成：
 
-## 🚀 快速开始
+1. **专业影棚肖像** - 东亚美女、圆框眼镜、自然微表情
+2. **Wendy发型侧颜** - K-pop粉丝站摄影风格
+3. **半脸特写** - 戏剧性高对比度
+4. **K-pop眼镜娘** - 无框眼镜、红棕短发
+5. **湖畔侧影** - 秋日金光、紫色蕾丝上衣
+6. **极简影棚** - 灰色背景、柔和灯光
+7. **酒店大堂** - 豪华环境、时尚摄影
 
-### 在线运行
-直接在浏览器中打开 `3d-racing-game.html` 即可开始游戏。
+### 早期作品 (2026-01-14)
 
-### 本地运行
-```bash
-# 使用 Python HTTP 服务器
-python3 -m http.server 8000
+- **中年日本妇女** - 简单肖像
+- **森林女神** - 使用 Prompt Generator 生成详细提示词
 
-# 或使用 Node.js
-npx http-server
-
-# 然后在浏览器访问
-open http://localhost:8000/3d-racing-game.html
-```
-
-## 📁 文件结构
+## 📁 目录结构
 
 ```
-3d-racing-game.html    # 主游戏文件（单文件架构，约1700行）
-├── HTML 结构
-│   ├── 游戏容器
-│   ├── UI 层（菜单、HUD、小地图）
-│   └── Canvas（Three.js 渲染）
-│
-├── CSS 样式
-│   ├── 响应式设计
-│   ├── 动画效果
-│   └── UI 组件样式
-│
-└── JavaScript 代码
-    ├── 配置常量
-    ├── 游戏状态管理
-    ├── Three.js 场景管理
-    ├── Car 类（车辆）
-    ├── CarPhysics 类（物理引擎）
-    ├── TrackGenerator 类（赛道生成）
-    ├── AIOpponent 类（AI对手）
-    ├── ParticleSystem 类（粒子系统）
-    ├── CollisionDetection 类（碰撞检测）
-    ├── SaveSystem 类（保存系统）
-    ├── UIManager（UI管理）
-    └── 游戏主循环
+ai-generated-images/
+├── README.md           # 图像详细说明
+├── japanese_woman.jpg
+├── japanese_woman_forest.jpg
+├── portrait_1_studio.jpg
+├── portrait_2_wendy_cut.jpg
+├── portrait_3_half_face.jpg
+├── portrait_4_kpop_glasses.jpg
+├── portrait_5_lakeside.jpg
+├── portrait_6_studio_minimal.jpg
+└── portrait_7_hotel_lobby.jpg
 ```
-
-## 🎯 游戏技巧
-
-1. **起步**: 按住 `W` 键加速，保持直线行驶
-2. **超车**: 观察AI对手位置，使用转向键避让
-3. **漂移**: 在高速时按 `Space` 键可以漂移过弯
-4. **障碍物**: 避开红色路障和灰色故障车
-5. **策略**: 保持速度的同时避免碰撞
 
 ## 🛠️ 技术栈
 
-- **Three.js r128**: 3D 渲染引擎
-- **原生 JavaScript**: 无构建工具，单文件架构
-- **Canvas API**: 小地图和 HUD 渲染
-- **localStorage**: 本地数据持久化
-- **Web Audio API**: 音效系统（可选）
+- **AI 模型**: Tongyi-MAI/Z-Image-Turbo (ModelScope)
+- **API**: [ModelScope Inference API](https://api-inference.modelscope.cn/)
+- **工具**: 
+  - [Claude Code](https://claude.ai/code) - AI 编程助手
+  - ModelScope Image Generation Skill
+  - Prompt Generator Skill
+- **存储**: GitHub (版本控制)
+- **展示**: Notion (项目管理)
 
-## 📊 性能优化
+## 🚀 如何使用
 
-- **对象池**: 复用游戏对象，减少垃圾回收
-- **视锥体裁剪**: 只渲染可见对象
-- **LOD系统**: 距离雾遮挡远处对象
-- **粒子限制**: 最大粒子数限制（5000个）
-- **资源清理**: 自动清理场景后方对象
+### 查看图片
 
-## 🌟 游戏特色
+直接访问 [ai-generated-images](./ai-generated-images/) 目录查看所有图片。
 
-### 增强版 MVP
-本项目采用增强版 MVP 复杂度，包含以下高级特性：
+### 获取图片链接
 
-1. **粒子特效**: 多种粒子效果增强视觉体验
-2. **物理引擎**: 真实的车辆动力学模拟
-3. **高级AI**: 智能避障和超车决策
-4. **保存系统**: 完整的数据持久化
-
-### 环境装饰系统
-为提供速度和运动的视觉参考，赛道两侧包含：
-- 🌲 多种树木（随机高度和颜色）
-- 🏢 城市建筑（带窗户，随机高度）
-- 🌸 植物和花朵（彩色花朵装饰）
-- 💡 路灯（6米高，发光灯罩）
-- 🪨 岩石（随机形状和旋转）
-
-这些装饰物以50米间隔动态生成，并在玩家经过后自动清理以优化性能。
-
-## 📝 开发说明
-
-### 添加新功能
-1. 在 `GAME_CONFIG` 中添加配置常量
-2. 在相应的类中实现功能
-3. 更新 UI 显示（如需要）
-4. 测试游戏平衡性
-
-### 自定义配置
-编辑 `GAME_CONFIG` 对象来调整游戏参数：
-
-```javascript
-const GAME_CONFIG = {
-    TRACK_WIDTH: 30,           // 赛道宽度
-    TRACK_LENGTH: 1000,        // 每圈长度
-    LANES: 4,                  // 车道数量
-    MAX_SPEED: 150,            // 最大速度
-    ACCELERATION: 50,          // 加速度
-    AI_COUNT: 5,               // AI对手数量
-    // ... 更多配置
-};
+**GitHub 原始链接**:
+```
+https://raw.githubusercontent.com/jgzuo/ai-generated-images/main/ai-generated-images/[图片名称]
 ```
 
-## 🎮 游戏截图
+**jsDelivr CDN 链接** (推荐，速度更快):
+```
+https://cdn.jsdelivr.net/gh/jgzuo/ai-generated-images@main/ai-generated-images/[图片名称]
+```
 
-（添加游戏截图可以增强项目展示效果）
+### 生成自己的图片
 
-## 📄 许可证
+如果你想生成类似的图片，可以使用以下工具：
 
-MIT License
+1. **ModelScope API**: 
+   - 注册账号: https://www.modelscope.cn/
+   - 获取 API Token
+   - 调用图像生成接口
 
-## 👨‍💻 作者
+2. **Claude Code**:
+   - 安装 Claude Code
+   - 使用 ModelScope Image Generation Skill
 
-Created with Claude Code
+## 📊 项目统计
 
-## 🙏 致谢
+- **总图片数**: 9 张
+- **总大小**: ~700KB
+- **分辨率**: 760x1280 像素
+- **格式**: PNG/JPG
+- **生成时间**: 2026-01-14 至 2026-01-15
 
-- Three.js 社区
-- Claude Code AI 助手
-- 开源游戏开发社区
+## 🔗 相关链接
 
-## 📮 反馈
+- [GitHub 仓库](https://github.com/jgzuo/ai-generated-images)
+- [ModelScope 官网](https://www.modelscope.cn/)
+- [通义万象模型](https://modelscope.cn/models/Tongyi-MAI/Z-Image-Turbo)
 
-欢迎提交 Issue 和 Pull Request！
+## 📝 License
+
+AI 生成的图像版权遵循 [ModelScope 使用条款](https://www.modelscope.cn/)。
+
+本仓库内容遵循 MIT License。
 
 ---
 
-**享受游戏！🏁**
+**🤖 Generated by Claude Code**  
+**📅 Last Updated: 2026-01-15**
